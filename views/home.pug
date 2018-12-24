@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(class="m-top")
+        div(class="wrap f-cb")
+            h1(class="logo")
+                a(hidefocus="true" href="/home") 网易云音乐
+            ul(class="m-nav")
+                li(class="fst")
+                    span
+                        a(hidefocus="true" href="/home" data-module="discover" class="z-slt")
+                            em 发现音乐
+                            sub(class="cor") &nbsp;
+                li(class="fst")
+                    span
+                        a(data-action="bilog" data-log-action="page" data-log-json='{"type":"my"}' hidefocus="true" href="/my/" data-module="my" class)
+                            em 发现音乐
+                            sub(class="cor") &nbsp;
