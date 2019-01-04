@@ -8,11 +8,144 @@ block content
             ul(class="m-nav")
                 li(class="fst")
                     span
-                        a(hidefocus="true" href="/home" data-module="discover" class="z-slt")
+                        a(hidefocus="true" href="/home" data-module="discover")
                             em 发现音乐
                             sub(class="cor") &nbsp;
                 li(class="fst")
                     span
-                        a(data-action="bilog" data-log-action="page" data-log-json='{"type":"my"}' hidefocus="true" href="/my/" data-module="my" class)
-                            em 发现音乐
+                        a(data-action="bilog" data-log-action="page" data-log-json='{"type":"my"}' hidefocus="true" href="/home/my" data-module="my")
+                            em 我的音乐
                             sub(class="cor") &nbsp;
+                li(class="fst")
+                    span
+                        a(hidefocus="true" href="/friend" data-module="friend")
+                            em 朋友
+                            sub(class="cor") &nbsp;
+                li(class="fst")
+                    span
+                        a(hidefocus="true" href="/store/product" data-module="store")
+                            em 商城
+                            sub(class="cor") &nbsp;
+                li(class="fst")
+                    span
+                        a(hidefocus="true" href="/nmusician/web/recruit" data-module="musician")
+                            em 音乐人
+                            sub(class="cor") &nbsp;
+                li(class="fst")
+                    span
+                        a(data-action="bilog" data-log-action="page" data-log-json='{"type":"downloadapp","source":"tab"}' hidefocus="true"
+                        href="/download" data-module="download")
+                            em 下载客户端
+                            sub(class="cor") &nbsp;
+                    sup(class="hot") &nbsp;
+
+            div(class="no_login")
+                a(hidefocus="true" href="#" class="link" data-action="signup" onclick="signup_btn();") 注册
+                a(hidefocus="true" href="#" class="link" data-action="login" onclick="login_btn();") 登录
+            span(class="icon_span") ▼
+            div(class="login")
+                img(class="avatar")
+            a(data-action="bilog" data-log-action="click" data-log-json="{&quot;target&quot;:&quot;uploadvideo&quot;,&quot;page&quot;:&quot;homepage&quot;}"
+            href="/login?targetUrl=%2Fst/creator" class="m-topvd f-pr m-creator-center") 创作者中心
+            div(class="m-srch f-pr")
+                div(class="srchbg")
+                    span(class="parent")
+                        input(type="text" name="srch" id="srch" class="txt j-flag" value="" style="opacity: 1;" placeholder="音乐/视频/电台/用户")
+
+
+
+
+
+
+
+
+
+    // 登录窗口
+    div(class="auto m-layer z-show" style="top: 65px; left: 614px;" id="auto")
+        div(class="zbar" id="auto-id-IyUQg4er7HMegWhT")
+            div(class="zttl f-thide") 邮箱登录
+        div(class="zcnt")
+            div(class="lyct lyct-1 f-cb" id="auto-id-Inb65FVZIOXsydIp")
+                div(class="n-log2 n-log2-2")
+                    div(class="f-pr" style="z-index:5;")
+                        input(type="text" name="e" id="e" class="js-input u-txt" placeholder="请输入帐号" autocomplete="off")
+                        ul(class="js-suggest u-fill" style="visibility:hidden;" id="auto-id-5dcqewT9dUeXDqHZ")
+                    div(class="f-mgt10")
+                        input(type="password" name="epw" id="epw" class="js-input u-txt" placeholder="请输入密码" autocomplete="new-password")
+                    div(class="js-captcha")
+                    div(class="ScapTcha js-scaptcha")
+                    div(class="u-err" style="display:none;")
+                        i(class="u-icn u-icn-25")
+                        span
+                    div(class="f-mgt10")
+                        label(class="s-fc3")
+                        input(type="checkbox" checked="checked" class="u-auto")
+                        span 自动登录
+                        a(href="//reg.163.com/getpasswd/RetakePassword.jsp" target="_blank" class="f-fr s-fc3") 忘记密码？
+                    div(class="f-mgt20")
+                    a(class="js-primary u-btn2 u-btn2-2" hidefocus="true" href="#" data-action="login" id="login")
+                        i 登　录
+                div(class="n-loglink2")
+                    a(href="javascript:;" data-action="select" class="s-primary") &lt;&nbsp;&nbsp;其他登录方式
+        span(class="zcls" title="关闭窗体" id="login_closed") ×
+    div(class="auto-1545637497443 m-mask" id="auto-1545637497443") &nbsp;
+
+    // 注册窗口
+    div(class="auto m-layer z-show" style="top: 65px; left: 614px;" id="signup_auto")
+        div(class="zbar")
+            div(class="zttl f-thide") 邮箱注册
+        div(class="zcnt")
+            div(class="lyct lyct-1 f-cb")
+                div(class="signup_info")
+                    table(class="sign_tab")
+                        tr
+                            td
+                                span(style="color: #ff0000") * &nbsp;
+                                label(for="email") 邮箱地址
+                            td
+                                input(type="email" id="email" name="email" class="ipt" maxlength="40")
+                        tr
+                            td
+                                span(style="color: #ff0000") * &nbsp;
+                                label(for="password") 密码
+                            td
+                                input(type="password" id="password" name="password" class="ipt" maxlength="20")
+                        tr
+                            td
+                                span(style="color: #ff0000") * &nbsp;
+                                label(for="confirmPW") 确认密码
+                            td
+                                input(type="password" id="confirmPW" name="confirmPW" class="ipt" maxlength="20")
+                        tr
+                            td
+                                span(style="color: #ff0000") * &nbsp;
+                                label(for="vcode") 验证码
+                            td
+                                input(type="text" id="vcode" name="vcode" class="ipt" style="width: 128px; float: left; margin: 27px 0px;" maxlength="4")
+                                div(class="v_code" id="vcode_svg")
+                        tr(style="line-height: 0;")
+                            td
+                            td
+                                a(id="sendMainAcodeBtn" onclick="sendEmail();" href="javascript:void(0);" class="btn" hidefocus="true")
+                                    strong(id="sendMainAcodeStg") 免费获取验证码
+                                a(href="javascript:void(0);" onclick="getvcode();" class="vcode_a") 看不清楚？换张图片
+                        tr
+                            td
+                                span(style="color: #ff0000") * &nbsp;
+                                label(for="emailCode") 邮箱验证码
+                            td
+                                input(type="test" id="emailCode" name="emailCode" class="ipt" maxlength="6")
+                        tr(style="line-height: 0;")
+                            td
+                            td(class="btn_sign")
+                                input(type="checkbox" checked="checked" class="u-auto" id="checkB")
+                                span &nbsp;&nbsp;同意
+                                a "服务条款"
+                                span 和
+                                a "隐私权相关政策"
+                        tr
+                            td
+                            td
+                                a(id="mainRegA" href="javascript:void(0);" class="btnReg") 立即注册
+        span(class="zcls" title="关闭窗体" id="signup_closed") ×
+    div(class="auto-1545637497443 m-mask" id="signup_mask") &nbsp;
